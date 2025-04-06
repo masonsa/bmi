@@ -12,13 +12,31 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://bmi-calculator-tools.netlify.app'),
   title: "BMI Calculator - Free Online Tool",
   description: "Calculate your Body Mass Index (BMI) with our free online calculator. Get instant results and learn about BMI categories.",
   keywords: "BMI calculator, body mass index, weight calculator, health calculator, BMI categories, health assessment, weight management",
-  robots: "index, follow",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'google-site-verification',
+  },
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "BMI Calculator - Free Online Tool",
     description: "Calculate your Body Mass Index (BMI) with our free online calculator. Get instant results and learn about BMI categories.",
+    url: 'https://bmi-calculator-tools.netlify.app',
+    siteName: 'BMI Calculator',
     type: "website",
     locale: "en_US",
   },

@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Sitemap: https://bmi-calculator-tools.netlify.app/sitemap.xml
+
+# Google Specific
+User-agent: Googlebot
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+User-agent: Mediapartners-Google
+Allow: /
+User-agent: Adsbot-Google
+Allow: / 
