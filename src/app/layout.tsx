@@ -40,12 +40,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google AdSense */}
-        <Script
+        {/* Google AdSense - Using inline script for verification */}
+        <script
           async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseId}`}
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4731095609771891"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
         
         {/* Google Analytics */}
