@@ -34,11 +34,24 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const adsenseId = process.env.NEXT_PUBLIC_ADSENSE_ID;
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Google AdSense */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=G-MC6ZJRJ6W9`}
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseId}`}
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+        
+        {/* Google Analytics */}
+        <Script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -46,7 +59,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-MC6ZJRJ6W9');
+            gtag('config', '${gaId}');
           `}
         </Script>
       </head>
